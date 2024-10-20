@@ -1,3 +1,47 @@
-body {
-  background-color: blue;
+.mb-3 {
+  background-color: burlywood;
+}
+
+#sort-title {
+    display: flex;
+    justify-content: center;
+}
+
+#sort-text {
+    display: flex;
+    justify-content: center;
+}
+
+#sort-small {
+    display: flex;
+    justify-content: center;
+}
+
+#sort {
+  margin: 0;
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+}
+
+.card-img-top {
+  max-height: fit-content;
+  max-width: fit-content;
+  display: block;
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+#form1 {
+  display: none;
+}
+
+#filter-btns {
+  display: flex;
+  justify-content: space-around;
 }

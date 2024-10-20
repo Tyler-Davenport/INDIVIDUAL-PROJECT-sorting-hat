@@ -14,15 +14,15 @@ Focus on MVP. Do not spend a ton of time styling initially. Hit functionality fi
 ## Instructions
 You are in charge of bringing the Hogwarts sorting hat to life! 
 
-This is what the finished app should have:
-- To start off with, you will use a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/#header-and-footer) to have your sorting hat introduce itself and start the sorting process (by clicking on a button). The form should not be on the DOM until the button click happens.
-
+<!-- This is what the finished app should have:
+- To start off with, you will use a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/#header-and-footer) to have your sorting hat introduce itself and start the sorting process (by clicking on a button). The form should not be on the DOM until the button click happens. -->
+<!-- need rng functionality -->
 - A [bootstrap form](https://getbootstrap.com/docs/5.0/forms/overview/) will then appear to fill in the student's name and a button to sort. This should then assign the student to a random house (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin). 
-
+<!-- need function to clear the form and hide it again. also need to figure out how to get house assigned to present an image and a line of text with house name -->
 - On sorting a student, the form should clear and a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/) with the student's name and a random house assignment should print below the form. 
-
+<!-- added card bootstrap and the expel button. just need to add the destructuring and figure out how to push the content to another area ("MOLDY VOLDY'S ARMY") -->
 - You should also be able to expel a student after they have been sorted, which should remove their card from the student array and move them to Moldy Voldy's Army.
-
+<!-- added filter house buttons -->
 In the end, your app will look something like: 
 
 ![screencapture-drt-sorting-netlify-app-2022-04-23-14_28_47](https://user-images.githubusercontent.com/29741570/164943525-d20275be-c312-42d1-9730-0c1fd3fd9834.png)
@@ -41,7 +41,7 @@ In the end, your app will look something like:
 - Your HTML and JS should all have proper indentation
 - Helpful Form: An error message shows if a user tries to sort a student without filling out the form
 - Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
-- Add filter buttons to filter the non-expelled students by house
+<!-- - Add filter buttons to filter the non-expelled students by house -->
 
 ## DEFINITION OF DONE
 Once you have completed all the technical requirments, you should complete the following:
@@ -54,4 +54,3 @@ Think of a way you can expel students without just hiding those divs on the page
 ## Optional Bonus
 - House Colors: The color of the student's card changes depending on which house they were sorted.
 - Card Sorting/Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
-
