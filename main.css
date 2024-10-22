@@ -41,7 +41,7 @@
   display: none;
 }
 
-#filter-btns {
+.filter-btns {
   display: flex;
   justify-content: space-around;
 }
