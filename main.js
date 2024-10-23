@@ -13,21 +13,34 @@ const renderToDom = (divId, htmlToRender) => {
   targetingApp.innerHTML = htmlToRender;
 };
 
-const cardsOnDom = (array) => {
-  let domString = "";
-  for (const student of array) {
-    domString += `<div class="card" style="width: 18rem;">
-    <img src=${student.imageUrl} class="card-img-top" alt="...">
-    <div class="card-body">
-    <h3 class="card-title">${student.name}</h3>
-    <h5 class="card-title">${student.house}</h5>
-    <p class="card-text">${student.color}</p>
-    <a href="#" class="btn btn-danger" id="delete">Expel</a>
-    </div>
-    </div>`;
-  }
-    renderToDom("#app", domString);
+const cardsOnDom = (student) => { 
+  let domString = `<div class="card" style="width: 18rem;">
+  <img src=${student.imageUrl} class="card-img-top" alt="...">
+  <div class="card-body">
+  <h3 class="card-title">${student.name}</h3>
+  <h5 class="card-title">${student.house}</h5>
+  <p class="card-text">${student.color}</p>
+  <a href="#" class="btn btn-danger" id="delete">Expel</a>
+  </div>
+  </div>`;
+      return domString;
 };
+
+
+  let domString = "";
+  wizards.map((student) => {
+    const card = cardsOnDom(student);
+    domString += card;
+  });
+    renderToDom("#app", domString);
+
+
+// const filter = (house) => {
+//   const filteredWizards = wizards.filter(
+//     (student) => student.house === house
+//   );
+//   cardsOnDom(filteredWizards);
+// };
 
 const filter = (array, houseString) => {
   const houseArray = []; 
@@ -53,7 +66,7 @@ const filter = (array, houseString) => {
       imageUrl: document.querySelector("#imageUrl").value,
     };
 
-    wizaards.push(newStudentObj);
+    wizards.push(newStudentObj);
     cardsOnDom(pets);
     form.reset();
   }
