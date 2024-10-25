@@ -37,11 +37,11 @@
   border-radius: 25px;
 }
 
-#form1 {
+#form {
   display: none;
 }
 
-.filter-btns {
+/* #filter-btns {
   display: flex;
   justify-content: space-around;
-}
+} */
