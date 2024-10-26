@@ -45,3 +45,13 @@
   display: flex;
   justify-content: space-around;
 } */
+
+#armyApp {
+  display: flex;
+  justify-content: end;
+  flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+  background-color: black;
+  color: aliceblue;
+}
