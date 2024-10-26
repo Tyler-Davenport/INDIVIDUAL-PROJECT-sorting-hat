@@ -35,7 +35,8 @@ const renderToDom = (divId, htmlToRender) => {
 
 const cardsOnDom = (array) => { 
   let domString = "";
-  wizards.forEach((student) => {
+  for (const student of array) {
+  // wizards.forEach((student) => {
     domString += `<div class="card" style="width: 18rem;">
   <div class="card-body">
   <h3 class="card-title">${student.name}</h3>
@@ -43,7 +44,7 @@ const cardsOnDom = (array) => {
   <a href="#" class="btn btn-danger" id="delete--${student.id}">Expel</a>
   </div>
   </div>`;
-});
+};
     renderToDom("#app", domString);
 };
 
