@@ -20,6 +20,14 @@ const wizards = [
   }
 ];
 
+const voldyArr = [
+  {
+    id: 1,
+    name: "Daun",
+    house: "The Dark Side",
+  }
+]
+
 const renderToDom = (divId, htmlToRender) => {
   const targetingApp = document.querySelector(divId);
   targetingApp.innerHTML = htmlToRender;
@@ -27,18 +35,31 @@ const renderToDom = (divId, htmlToRender) => {
 
 const cardsOnDom = (array) => { 
   let domString = "";
-  for (const student of array) {
+  wizards.forEach((student) => {
+  // for (const student of array) {
     domString += `<div class="card" style="width: 18rem;">
   <div class="card-body">
   <h3 class="card-title">${student.name}</h3>
   <h5 class="card-title">${student.house}</h5>
-  <a href="#" class="btn btn-danger" id="delete">Expel</a>
+  <a href="#" class="btn btn-danger" id="delete--${student.id}">Expel</a>
   </div>
   </div>`;
-}
+});
     renderToDom("#app", domString);
 };
 
+const armyOnDom = (array) => { 
+  let armyDomString = "";
+  for (const evilOne of array) {
+    armyDomString += `<div class="expelledCard" style="width: 18rem;">
+  <div class="card-body">
+  <h3 class="card-title">${evilOne.name}</h3>
+  <h5 class="card-title">${evilOne.house}</h5>
+  </div>
+  </div>`;
+}
+    renderToDom("#armyApp", armyDomString);
+};
 
   // let domString = "";
   // wizards.map((student) => {
@@ -81,6 +102,27 @@ const addStudent = (e) => {
   cardsOnDom(wizards);
   form.reset();
 }
+// const armyFilter = (array, armyString) => {
+//   const armyArray = []; 
+
+//   for (const student of array) {
+//     if (student.name === armyString) {
+//       armyArray.push(student);
+//     }
+//   }
+//   return armyArray;
+// };
+// const removeStudent = (e) => {
+//   e.preventDefault();
+
+// const expelledStudentObj = {
+//   id: voldyArr.length + 1,
+//   name: document.querySelector("#name").value
+// };
+//   voldyArr.push(expelledStudentObj);
+//   armyOnDom(voldyArr);
+//   form.reset();
+// }
 
 form.addEventListener("submit", addStudent);
 
@@ -88,11 +130,15 @@ const app = document.querySelector("#app");
 
 app.addEventListener("click", (e) => {
   
-    if (e.target.id.icludes("expel")) {
+    if (e.target.id.includes("delete")) {
+      // let expelledWizards = [];
         const [, id] = e.target.id.split("--");
     const index = wizards.findIndex((e) => e.id === Number(id));
-    pets.splice(index, 1);
+    const removedStudent = wizards.splice(index, 1);
+    voldyArr.push(removedStudent[0]);
     cardsOnDom(wizards);
+    armyOnDom(voldyArr);
+    // expelledWizards.push
   }
 });
 
