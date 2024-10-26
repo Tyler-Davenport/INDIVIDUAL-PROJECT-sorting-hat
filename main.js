@@ -36,7 +36,6 @@ const renderToDom = (divId, htmlToRender) => {
 const cardsOnDom = (array) => { 
   let domString = "";
   wizards.forEach((student) => {
-  // for (const student of array) {
     domString += `<div class="card" style="width: 18rem;">
   <div class="card-body">
   <h3 class="card-title">${student.name}</h3>
@@ -60,21 +59,6 @@ const armyOnDom = (array) => {
 }
     renderToDom("#armyApp", armyDomString);
 };
-
-  // let domString = "";
-  // wizards.map((student) => {
-  //   const card = cardsOnDom(student);
-  //   domString += card;
-  // });
-  //   renderToDom("#app", domString);
-
-
-// const filter = (house) => {
-//   const filteredWizards = wizards.filter(
-//     (student) => student.house === house
-//   );
-//   cardsOnDom(filteredWizards);
-// };
 
 const filter = (array, houseString) => {
   const houseArray = []; 
@@ -102,27 +86,6 @@ const addStudent = (e) => {
   cardsOnDom(wizards);
   form.reset();
 }
-// const armyFilter = (array, armyString) => {
-//   const armyArray = []; 
-
-//   for (const student of array) {
-//     if (student.name === armyString) {
-//       armyArray.push(student);
-//     }
-//   }
-//   return armyArray;
-// };
-// const removeStudent = (e) => {
-//   e.preventDefault();
-
-// const expelledStudentObj = {
-//   id: voldyArr.length + 1,
-//   name: document.querySelector("#name").value
-// };
-//   voldyArr.push(expelledStudentObj);
-//   armyOnDom(voldyArr);
-//   form.reset();
-// }
 
 form.addEventListener("submit", addStudent);
 
@@ -131,14 +94,12 @@ const app = document.querySelector("#app");
 app.addEventListener("click", (e) => {
   
     if (e.target.id.includes("delete")) {
-      // let expelledWizards = [];
-        const [, id] = e.target.id.split("--");
+    const [, id] = e.target.id.split("--");
     const index = wizards.findIndex((e) => e.id === Number(id));
     const removedStudent = wizards.splice(index, 1);
     voldyArr.push(removedStudent[0]);
     cardsOnDom(wizards);
     armyOnDom(voldyArr);
-    // expelledWizards.push
   }
 });
 
